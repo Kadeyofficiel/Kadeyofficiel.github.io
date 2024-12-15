@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animation de typing
     const typedTextElement = document.getElementById('typed-text');
-    const text = "Développeur Full Stack & Concepteur SI";
+    const text = "en BTS SIO option SLAM";
     let index = 0;
 
     function typeText() {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Python', icon: 'fab fa-python', color: 'text-green-500' },
         { name: 'Java', icon: 'fab fa-java', color: 'text-red-500' },
         { name: 'Laravel', icon: 'fab fa-laravel', color: 'text-red-700' },
-        { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-700' }
+        { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-700' },
     ];
 
     skills.forEach(skill => {
@@ -72,6 +72,77 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Puissance 4',
             description: 'Jeu de Puissance 4',
             technologies: ['Langage C'],
+            details: `
+                <div class="project-details">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Puissance 4 en C</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Description</h4>
+                            <p class="mb-4">Implémentation complète du jeu Puissance 4 avec une logique de jeu et des algorithmes de détection de victoire.
+                            Ce projet a été fait en groupe lors de ma première année de Licence en Informatique.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Jeu contre un autre joueur</li>
+                                <li>Vérification automatique des conditions de victoire</li>
+                                <li>Interface console interactive</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">C</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Algorithmes</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Programmation Logique</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://github.com/Kadeyofficiel/Puissance4" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Voir le code source
+                        </a>
+                    </div>
+                </div>
+            `
+        },
+        {
+            title: 'Personnel',
+            description: 'Application en Java pour gérer les employés des ligues',
+            technologies: ['Java'],
+            details: `
+                <div class="project-details">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Application Personnel en Java</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Description</h4>
+                            <p class="mb-4">Application pour gérer les employés des ligues avec des fonctionnalités avancées de gestion et de suivi.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Gestion des informations des employés</li>
+                                <li>Suivi des performances</li>
+                                <li>Interface utilisateur conviviale</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Java</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://github.com/Kadeyofficiel/personnel" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Voir le code source
+                        </a>
+                    </div>
+                </div>
+            `
+        },
+        {
+            title: 'Stage de première année',
+            description: "Maintenance & corrections de bugs d'un site web",
+            technologies: ['HTML', 'CSS', 'JavaScript'],
             details: `
                 <div class="project-details">
                     <h3 class="text-3xl font-bold mb-6 text-indigo-600">Puissance 4 en C</h3>
@@ -131,6 +202,42 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         {
+            title: 'Calculatrice',
+            description: 'Calculatrice en PHP',
+            technologies: ['PHP', 'Laravel'],
+            details: `
+                <div class="project-details">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Calculatrice en PHP</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Description</h4>
+                            <p class="mb-4">Application web permettant d'effectuer des calculs simples et avancés avec une interface utilisateur conviviale.</p>
+                            
+                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Calculs simples et complexes</li>
+                                <li>Historique des calculs</li>
+                                <li>Interface responsive</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://github.com/Kadeyofficiel/Calculatrice" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Voir le code source
+                        </a>
+                    </div>
+                </div>
+            `
+        },
+        {
             title: 'Portfolio Personnel',
             description: 'Site web personnel showcase de compétences',
             technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind'],
@@ -162,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `
         }
+        
     ];
 
     projects.forEach((project, index) => {
