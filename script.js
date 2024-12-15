@@ -132,6 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="mt-6">
+                        <a href="documentation.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Télécharger la Documentation
+                        </a>
+                    </div>
+                    <div class="mt-6">
                         <a href="https://github.com/Kadeyofficiel/personnel" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
                             Voir le code source
                         </a>
@@ -171,37 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         {
-            title: 'Application de Gestion de Stock',
-            description: 'Application web de gestion de stock pour entreprise',
-            technologies: ['PHP', 'Laravel', 'MySQL'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Application de Gestion de Stock</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Application web complète permettant la gestion des stocks, des commandes et des inventaires pour les entreprises.</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Suivi des stocks en temps réel</li>
-                                <li>Gestion des commandes</li>
-                                <li>Rapports et statistiques</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        },
-        {
             title: 'Calculatrice',
             description: 'Calculatrice en PHP',
             technologies: ['PHP', 'Laravel'],
@@ -211,13 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Application web permettant d'effectuer des calculs simples et avancés avec une interface utilisateur conviviale.</p>
+                            <p class="mb-4">Application web permettant d'effectuer des calculs simples avec une interface assez</p>
                             
                             <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
                             <ul class="list-disc pl-5">
                                 <li>Calculs simples et complexes</li>
-                                <li>Historique des calculs</li>
+                                <li>Gestion des erreurs</li>      
                                 <li>Interface responsive</li>
+                    
                             </ul>
                         </div>
                         <div>
@@ -225,9 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="mt-6">
+                        <img src="calc1.png" alt="Calculatrice Interface 1" class="w-1/2 h-auto mb-4 rounded shadow-lg mr-auto">
+                        <img src="calc2.png" alt="Calculatrice Interface 2" class="w-1/2 h-auto rounded shadow-lg mr-auto">
                     </div>
                     <div class="mt-6">
                         <a href="https://github.com/Kadeyofficiel/Calculatrice" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
@@ -237,38 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `
         },
-        {
-            title: 'Portfolio Personnel',
-            description: 'Site web personnel showcase de compétences',
-            technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Portfolio Personnel</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Portfolio personnel moderne et responsive présentant mes projets, compétences et parcours professionnel.</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Design responsive</li>
-                                <li>Mode sombre</li>
-                                <li>Animations modernes</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        }
         
     ];
 
