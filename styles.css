@@ -1,0 +1,218 @@
+:root {
+    --primary-color: #3498db;     /* Bleu vibrant */
+    --secondary-color: #2ecc71;   /* Vert émeraude */
+    --accent-color: #9b59b6;      /* Violet doux */
+    
+    --text-light: #ecf0f1;        /* Gris très clair */
+    --text-dark: #2c3e50;         /* Bleu-gris profond */
+    
+    --bg-light: #f8f9fa;          /* Gris très clair */
+    --bg-dark: #34495e;           /* Gris bleu profond */
+    
+    --gradient-primary: linear-gradient(135deg, #3498db, #3498db);
+    --gradient-secondary: linear-gradient(135deg, #3498db, #3498db);
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Mode sombre */
+.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dark .nav-link {
+    color: var(--text-light);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Boutons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+    background: var(--gradient-secondary);
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+}
+
+/* Compétences et Cartes */
+.skill-card, .project-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.dark .skill-card, .dark .project-card {
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    color: var(--text-light);
+}
+
+/* Terminal */
+.terminal {
+    background-color: #1a202c;
+    color: #4ade80;
+    border: 1px solid #2d3748;
+    border-radius: 10px;
+}
+
+/* Animations et Effets */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.typing-effect {
+    border-right: 2px solid currentColor;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 2s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
+}
+
+/* Typographie */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    transition: all 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover {
+    transform: translateY(-3px);
+    color: var(--primary-color);
+}
+
+/* Thème Toggle */
+#theme-toggle {
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+}
+
+#theme-toggle i {
+    font-size: 1.2rem;
+}
+.image-container {
+    width: 400px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    margin: 100px auto;
+    overflow: hidden; /* Hide overflow */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+.image-container img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Limit max height */
+}
