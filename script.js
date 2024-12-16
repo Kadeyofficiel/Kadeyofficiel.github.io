@@ -150,25 +150,27 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ['HTML', 'CSS', 'JavaScript'],
             details: `
                 <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Puissance 4 en C</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB</h3>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Implémentation complète du jeu Puissance 4 avec une logique de jeu avancée et des algorithmes de détection de victoire.</p>
+                            <p class="mb-4">Stage de première année de BTS SIO</p>
                             
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
+                            <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
                             <ul class="list-disc pl-5">
-                                <li>Jeu contre un autre joueur</li>
-                                <li>Vérification automatique des conditions de victoire</li>
-                                <li>Interface console interactive</li>
+                                <li>Création d'une machine virtuelle avec une installation d'un OS Windows</li>
+                                <li>Modifications de pages web, en actualisant des informations</li>
+                                <li>Amélioration de l'interface utilisateur</li>
+                                <li>Reponsive Web Design : Adaptation automatique des images, vidéos et autres
+contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="text-xl font-semibold mb-4">Technologies</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">C</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Algorithmes</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Programmation Logique</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Javacript</span>
                             </div>
                         </div>
                     </div>
@@ -181,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technologies: ['SQL'],
             details: `
                 <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Application Personnel en Java</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Base de donnée SQL</h3>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-xl font-semibold mb-4">Description</h4>
