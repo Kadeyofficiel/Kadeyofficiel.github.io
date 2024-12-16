@@ -129,18 +129,68 @@
             </div>
         </div>
     </section>
-
-    <!-- Section Veille Technologique -->
-    <section id="veille" class="py-20 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-indigo-600 dark:text-indigo-400">
-                Veille Technologique
-            </h2>
-            <div id="veille-container" class="grid md:grid-cols-3 gap-6">
-                <!-- Veilles seront ajoutées dynamiquement -->
+<!-- Section Veille Technologique -->
+<section id="veille" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <!-- Titre de la section avec la bonne couleur -->
+        <h2 class="text-4xl font-bold text-center mb-12 text-blue-600 dark:text-indigo-400">
+            Veille Technologique
+        </h2>
+        <!-- Conteneur principal -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 grid md:grid-cols-2 gap-6">
+            <!-- Première colonne : Texte -->
+            <div>
+                <h3 class="text-3xl font-bold text-center mb-6 text-blue-600 dark:text-indigo-400">
+                    Le Cloud Gaming
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    Le <strong>Cloud Gaming</strong>, ou jeu en streaming, permet aux utilisateurs de jouer à des jeux vidéo sans avoir besoin d'une console ou d'un ordinateur puissant. Les jeux sont exécutés sur des serveurs distants et les images sont transmises en temps réel sur l'écran de l'utilisateur via une connexion internet. Cela élimine le besoin d’acheter du matériel coûteux, puisque le traitement graphique et les calculs lourds sont déportés sur des serveurs dans le cloud.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    <strong>Technologies utilisées :</strong>
+                </p>
+                <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <li><strong>Infrastructure Cloud :</strong> Des plateformes comme <a href="https://cloud.google.com" class="text-blue-500 hover:underline" target="_blank">Google Cloud</a>, <a href="https://azure.microsoft.com" class="text-blue-500 hover:underline" target="_blank">Microsoft Azure</a>, ou <a href="https://aws.amazon.com" class="text-blue-500 hover:underline" target="_blank">Amazon Web Services (AWS)</a> hébergent les serveurs nécessaires au fonctionnement des services de Cloud Gaming. Ces serveurs gèrent un grand nombre de joueurs en simultané avec une faible latence.</li>
+                    <li><strong>Streaming vidéo :</strong> Les jeux sont rendus sur un serveur distant et transmis sous forme de flux vidéo en temps réel à l'utilisateur via des protocoles comme <a href="https://webrtc.org/" class="text-blue-500 hover:underline" target="_blank">WebRTC</a> ou des formats spécifiques.</li>
+                    <li><strong>Réseau et latence :</strong> Une connexion internet rapide et stable est cruciale pour une expérience fluide. Les réseaux <a href="https://www.qualcomm.com/5g" class="text-blue-500 hover:underline" target="_blank">5G</a> et la <a href="https://www.orange.fr/portail-fibre" class="text-blue-500 hover:underline" target="_blank">fibre optique</a> jouent un rôle essentiel dans le développement du Cloud Gaming.</li>
+                    <li><strong>Interfaces utilisateurs :</strong> Les plateformes proposent des applications permettant de jouer sur <em>smartphones</em>, <em>tablettes</em>, <em>télévisions connectées</em> et <em>navigateurs web</em>.</li>
+                </ul>
+            </div>
+            <!-- Deuxième colonne : Image et outil -->
+            <div class="space-y-6">
+                <!-- Feedly Card -->
+                <div class="flex items-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <img src="feedly.webp" alt="Feedly" class="w-20 h-20 mr-6 object-contain">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                            Feedly
+                        </h4>
+                        <p class="text-gray-700 dark:text-gray-400 text-base">
+                            Mon outil principal pour organiser et suivre mes sources d'information techniques. <a href="https://feedly.com" class="text-blue-500 hover:underline" target="_blank">Feedly</a> est un agrégateur de flux RSS accessible via navigateur et mobile pour gérer ses abonnements.
+                        </p>
+                    </div>
+                </div>
+                <!-- Cloud Gaming Images -->
+                <div>
+                    <img src="Cgaming1.jpg" alt="Schéma Cloud Gaming" class="rounded-lg shadow-md mb-4">
+                    <img src="Cgaming2.jpg" alt="Logos des plateformes Cloud Gaming" class="rounded-lg shadow-md">
+                </div>
+                <!-- Liens utiles -->
+                <div class="mt-6">
+                    <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Articles utiles :</h4>
+                    <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300">
+                        <li><a href="https://www.realite-virtuelle.com/shadow-pc-tout-savoir/" class="text-blue-500 hover:underline" target="_blank">Shadow - Service de PC dans le Cloud</a></li>
+                        <li><a href="https://www.geforcenow.com" class="text-blue-500 hover:underline" target="_blank">GeForce NOW - NVIDIA Cloud Gaming</a></li>
+                        <li><a href="https://www.xbox.com/en-US/cloud-gaming" class="text-blue-500 hover:underline" target="_blank">Xbox Cloud Gaming</a></li>
+                        <li><a href="https://luna.amazon.com/" class="text-blue-500 hover:underline" target="_blank">Amazon Luna - Cloud Gaming</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Section Contact -->
     <section id="contact" class="py-20 bg-white dark:bg-gray-800">
@@ -168,7 +218,7 @@
     </div>
 
     <footer class="bg-gray-900 text-white py-6 text-center">
-        <p>&copy; 2023 Bakht Mohamed</p>
+        <p>&copy; 2025 Bakht Mohamed</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
