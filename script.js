@@ -203,10 +203,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </div>
-                    <div class="mt-6">
-                        <img src="calc1.png" alt="Calculatrice Interface 1" class="w-1/2 h-auto mb-4 rounded shadow-lg mr-auto">
-                        <img src="calc2.png" alt="Calculatrice Interface 2" class="w-1/2 h-auto rounded shadow-lg mr-auto">
-                    </div>
+<div class="mt-6">
+    <img src="calc1.png" alt="Calculatrice Interface 1" class="w-1/4 h-auto mb-4 rounded shadow-lg mr-auto">
+    <img src="calc2.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
+</div>
+
+
+
                     <div class="mt-6">
                         <a href="https://github.com/Kadeyofficiel/Calculatrice" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
                             Voir le code source
@@ -313,44 +316,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    veilleThemes.forEach((theme, index) => {
-        const themeCard = document.createElement('div');
-        themeCard.classList.add('bg-white', 'dark:bg-gray-800', 'p-6', 'rounded-lg', 'shadow-md');
-        themeCard.innerHTML = `
-            <h3 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">${theme.title}</h3>
-            <p class="mb-4 text-gray-700 dark:text-gray-300">${theme.description}</p>
-            <button class="veille-details-btn btn-primary" data-index="${index}">
-                En Savoir Plus
-            </button>
+    // Supprimer les projets existants avant d'ajouter
+    projectsContainer.innerHTML = ''; 
+    projects.forEach((project, index) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md';
+        projectCard.innerHTML = `
+            <h3 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">${project.title}</h3>
+            <p class="mb-4">${project.description}</p>
+            <button class="btn-primary" data-index="${index}">Voir Détails</button>
         `;
-        veilleContainer.appendChild(themeCard);
+        projectsContainer.appendChild(projectCard);
     });
 
-    // Gestion des modaux
-    function setupModalHandlers(container, dataAttr) {
-        container.addEventListener('click', (e) => {
-            if (e.target.classList.contains(dataAttr)) {
-                const index = e.target.getAttribute('data-index');
-                const data = dataAttr === 'project-details-btn' ? projects : veilleThemes;
-                modalContent.innerHTML = data[index].details;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            }
-        });
-    }
-
-    setupModalHandlers(projectsContainer, 'project-details-btn');
-    setupModalHandlers(veilleContainer, 'veille-details-btn');
-
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+    projectsContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            const index = e.target.dataset.index;
+            modalContent.innerHTML = projects[index].details;
+            modal.classList.replace('hidden', 'flex'); // Affiche le modal
         }
     });
-}); 
+    
+    closeModal.addEventListener('click', () => {
+        modal.classList.replace('flex', 'hidden'); // Cache le modal
+    });
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.replace('flex', 'hidden');
+    });
+});
