@@ -176,6 +176,41 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         {
+            title: 'Sucrerie',
+            description: "Base de donnée pour gérer le stock d'une boutique de bonbons & de patisseries",
+            technologies: ['SQL'],
+            details: `
+                <div class="project-details">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Application Personnel en Java</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Description</h4>
+                            <p class="mb-4">Base de donnée pour gérer le stock d'une boutique de bonbons & de patisseries</p>
+                            
+                            <h4 class="text-xl font-semibold mb-4">Logiciels utilisés :</h4>
+                            <ul class="list-disc pl-5">
+                                <li>MySQL pour créer la BDD</li>
+                                <li>Code SQL fait sur Visual Studio Code</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">SQL & MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="Sucrerie.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Télécharger la Documentation
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                    </div>
+                </div>
+            `
+        },
+        {
             title: 'Calculatrice',
             description: 'Calculatrice en PHP',
             technologies: ['PHP', 'Laravel'],
