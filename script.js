@@ -146,8 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: 'Stage de première année',
-            description: "Maintenance & corrections de bugs d'un site web",
-            technologies: ['HTML', 'CSS', 'JavaScript'],
+            description: "Maintenance & corrections de bugs d'un site web statique",
+            technologies: ['HTML', 'CSS',],
             details: `
                 <div class="project-details">
                     <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB</h3>
@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             
                             <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
                             <ul class="list-disc pl-5">
-                                <li>Création d'une machine virtuelle avec une installation d'un OS Windows</li>
+                                <li>Création d'une machine virtuelle avec une installation d'un OS Windows à l'aide d'un fichier en .iso</li>
                                 <li>Modifications de pages web, en actualisant des informations</li>
                                 <li>Amélioration de l'interface utilisateur</li>
-                                <li>Reponsive Web Design : Adaptation automatique des images, vidéos et autres
+                                <li>Adaptation automatique des images, vidéos et autres
 contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</li>
                             </ul>
                         </div>
@@ -170,7 +170,38 @@ contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Javacript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            title: 'Stage de deuxième année',
+            description: "Maintenance & développement d'un site web statique",
+            technologies: ['HTML', 'CSS', 'PHP'],
+            details: `
+                <div class="project-details">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Description</h4>
+                            <p class="mb-4">Stage de deuxième année de BTS SIO</p>
+                            
+                            <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Modification de la page "produits", en actualisant les prix, ajout d'images</li>
+                                <li>Création de la possibilité de dérouler "produits" affichant les différents types de produit disponible : Matériels, accessoires, services</li>
+                                <li>Création des pages suivantes : Matériels, accessoires, services</li>
+                                <li>Création d'un formulaire de contact en HTML & CSS + PHP pour l'envoie des informations au destinataire</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
                             </div>
                         </div>
                     </div>
