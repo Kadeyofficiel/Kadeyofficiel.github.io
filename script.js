@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: 'Stage de première année',
-            description: "Maintenance & corrections de bugs d'un site web statique",
+            description: "Maintenance & corrections de bugs d'un site web dynamique",
             technologies: ['HTML', 'CSS',],
             details: `
                 <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB dynamique</h3>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-xl font-semibold mb-4">Description</h4>
