@@ -158,11 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             
                             <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
                             <ul class="list-disc pl-5">
+                            <li>Les images proviennent de screen fait via un smartphone -> adaptation automatique en fonction de l'écran</li>
                                 <li>Création d'une machine virtuelle avec une installation d'un OS Windows à l'aide d'un fichier en .iso</li>
                                 <li>Modifications de pages web, en actualisant des informations</li>
                                 <li>Amélioration de l'interface utilisateur</li>
                                 <li>Adaptation automatique des images, vidéos et autres
-contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</li>
+contenus multimédias en fonction de la taille de l'écran</li>
                             </ul>
                         </div>
                         <div>
@@ -171,7 +172,15 @@ contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
                             </div>
+    <img src="11.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
+        <img src="12.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
+            <img src="13.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
+                        <img src="14.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
                         </div>
+                        </div>
+                            <a href="STAGE1.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Télécharger la Documentation
+                        </a>
                     </div>
                 </div>
             `
@@ -203,7 +212,17 @@ contenus multimédias en fonction de la taille de l'écran (aspect-ratio en %)</
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
                                 <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
                             </div>
+                            <div class="mt-6">
+    <img src="2eme1.png" alt="Calculatrice Interface 1" class="w-3/4 h-auto mb-4 rounded shadow-lg mr-auto">
+    <img src="2eme2.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
+        <img src="2EME3.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
+            <img src="2EME4.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
+</div>
+                            <a href="STAGE2.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
+                            Télécharger la Documentation
                         </div>
+
+                        </a>
                     </div>
                 </div>
             `
