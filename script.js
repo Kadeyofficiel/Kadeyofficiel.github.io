@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.src = src;
         });
     }
-<<<<<<< HEAD
+
     
     // Call the preload function
     preloadImages();
@@ -224,7 +224,7 @@ window.addEventListener('load', function() {
     if (preloader) {
         preloader.style.display = 'none';
     }
-=======
+
     
     // Call the preload function
     preloadImages();
@@ -240,5 +240,5 @@ window.addEventListener('load', function() {
         preloader.style.display = 'none';
     }
     
->>>>>>> 3fd885cfcc890d5231387d8c79281b3f078b61da
+
 });
