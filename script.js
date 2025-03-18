@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.src = src;
         });
     }
+<<<<<<< HEAD
     
     // Call the preload function
     preloadImages();
@@ -223,4 +224,21 @@ window.addEventListener('load', function() {
     if (preloader) {
         preloader.style.display = 'none';
     }
+=======
+    
+    // Call the preload function
+    preloadImages();
+});
+
+// Add an animation to show the page is fully loaded
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+    
+    // Hide the preloader if you have one
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+    }
+    
+>>>>>>> 3fd885cfcc890d5231387d8c79281b3f078b61da
 });

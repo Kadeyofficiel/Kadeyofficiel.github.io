@@ -543,6 +543,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .devicon-javascript-plain.colored {
     color: #F7DF1E;
+<<<<<<< HEAD
 }
 
 .devicon-php-plain.colored {
@@ -587,4 +588,102 @@ h1, h2, h3, h4, h5, h6 {
 
 .devicon-intellij-plain.colored {
     color: #087CFA;
+=======
+}
+
+.devicon-php-plain.colored {
+    color: #777BB4;
+}
+
+.devicon-python-plain.colored {
+    color: #3776AB;
+}
+
+.devicon-java-plain.colored {
+    color: #EA2D2E;
+}
+
+.devicon-c-plain.colored {
+    color: #A8B9CC;
+}
+
+.devicon-laravel-plain.colored {
+    color: #FF2D20;
+}
+
+.devicon-mysql-plain.colored {
+    color: #4479A1;
+}
+
+.devicon-git-plain.colored {
+    color: #F05032;
+}
+
+.devicon-github-original {
+    color: #f0f6fc;
+}
+
+.devicon-vscode-plain.colored {
+    color: #007ACC;
+}
+
+.devicon-eclipse-plain.colored {
+    color: #2C2255;
+}
+
+.devicon-intellij-plain.colored {
+    color: #087CFA;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary), var(--highlight));
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--darker);
+    border: 3px solid var(--primary);
+    z-index: 1;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.timeline-content {
+    background-color: rgba(15, 23, 42, 0.5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    border-left: 3px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+>>>>>>> 3fd885cfcc890d5231387d8c79281b3f078b61da
 }
