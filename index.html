@@ -1,242 +1,1098 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakht Mohamed - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white dark:bg-gray-800 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                Bakht Mohamed
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="#home" class="nav-link">Accueil</a>
-                <a href="#about" class="nav-link">À Propos</a>
-                <a href="#skills" class="nav-link">Compétences</a>
-                <a href="#projects" class="nav-link">Projets</a>
+<body class="bg-darker text-light">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full py-4 px-6 transition-all duration-300 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#accueil" class="text-2xl font-bold gradient-text">Bakht Mohamed</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil" class="nav-link">Accueil</a>
+                <a href="#a-propos" class="nav-link">À propos</a>
+                <a href="#e4" class="nav-link">E4</a>
+                <a href="#competences" class="nav-link">Compétences</a>
+                <a href="#projets" class="nav-link">Projets</a>
                 <a href="#veille" class="nav-link">Veille</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <button id="theme-toggle" class="text-gray-600 dark:text-gray-300">
-                    <i id="theme-icon" class="fas fa-moon"></i>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-light focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-darker absolute top-16 left-0 w-full py-4 px-6 hidden transition-all duration-300 z-50">
+            <div class="flex flex-col space-y-4">
+                <a href="#accueil" class="nav-link mobile-link">Accueil</a>
+                <a href="#a-propos" class="nav-link mobile-link">À propos</a>
+                <a href="#e4" class="nav-link mobile-link">E4</a>
+                <a href="#competences" class="nav-link mobile-link">Compétences</a>
+                <a href="#projets" class="nav-link mobile-link">Projets</a>
+                <a href="#veille" class="nav-link mobile-link">Veille</a>
+                <a href="#contact" class="nav-link mobile-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page d'Accueil -->
-    <section id="home" class="min-h-screen flex items-center pt-16 relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 opacity-50"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 items-center">
-                <div>
-                    <h1 class="text-5xl font-bold mb-4 text-indigo-800 dark:text-indigo-300">
-                        Bakht Mohamed
+    <!-- Hero Section - Accueil -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-xl md:text-2xl mb-2 code-font text-highlight">
+                        <span class="text-light opacity-70">const</span> étudiant <span class="text-light opacity-70">=</span> {
+                    </h3>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        Je suis <span class="gradient-text">Bakht Mohamed</span>
                     </h1>
-                    <p id="typed-text" class="text-2xl mb-8 text-gray-700 dark:text-gray-200">
-                        Etudiant en Informatique
+                    <h2 class="text-xl md:text-3xl mb-6">Etudiant en Informatique</h2>
+                    <p class="text-light opacity-80 mb-8 text-lg">
+                        Actuellement en deuxième année de BTS SIO
                     </p>
-                    <div class="space-x-4">
-                        <a href="#projects" class="btn-primary">Mes Projets</a>
-                        <a href="#contact" class="btn-secondary">Me Contacter</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary">
+                            Me contacter <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#projets" class="btn-secondary">
+                            Voir mes projets
+                        </a>
+                    </div>
+                    <div class="mt-8 flex space-x-6">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                    <img src="cyber.png" alt="Cybersecurity Hacker" />
+                <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative">
+                        <div class="bg-primary opacity-20 blur-lg absolute -inset-0.5 rounded-lg"></div>
+                        <div class="bg-darker p-6 rounded-lg relative">
+                            <pre class="code-font text-sm md:text-base text-light overflow-auto">
+<span class="text-primary">class</span> <span class="text-highlight">Developer</span> {
+  constructor() {
+    <span class="text-secondary">this</span>.name = <span class="text-green-400">'Bakht Mohamed'</span>;
+    <span class="text-secondary">this</span>.role = <span class="text-green-400">'Full Stack Developer'</span>;
+    <span class="text-secondary">this</span>.location = <span class="text-green-400">'France'</span>;
+    <span class="text-secondary">this</span>.languages = [<span class="text-green-400">'HTML'</span>, <span class="text-green-400">'CSS'</span>, <span class="text-green-400">'JavaScript'</span>, <span class="text-green-400">'PHP'</span>];
+    <span class="text-secondary">this</span>.frameworks = [<span class="text-green-400">'React'</span>, <span class="text-green-400">'Vue'</span>, <span class="text-green-400">'Laravel'</span>];
+  }
+
+  <span class="text-primary">sayHello</span>() {
+    console.log(<span class="text-green-400">'Bienvenue sur mon portfolio!'</span>);
+  }
+}
+
+<span class="text-secondary">const</span> me = <span class="text-primary">new</span> <span class="text-highlight">Developer</span>();
+me.sayHello();
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- Section À Propos -->
-<section id="about" class="py-20 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12 text-indigo-600 dark:text-indigo-400">
-            À Propos de Moi
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-                    Je suis 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        Bakht Mohamed
-                    </span>, 
-                    et je suis actuellement étudiant 🎓 au 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        lycée Charles de Foucauld
-                    </span> 
-                    en deuxième année de 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        BTS SIO
-                    </span> 
-                    (Services Informatiques aux Organisations) en option 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        SLAM
-                    </span> 
-                    (Solutions Logicielles et Application Métier) axé 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        développement
-                    </span> 
-                    et 
-                    <span class="font-bold px-2 py-1 rounded-md bg-blue-100/70 text-blue-800 shadow-sm hover:bg-blue-200/80 transition-all duration-300">
-                        cybersécurité
-                    </span>. 
-                    Je vous propose sur ce portfolio de retrouver ci-dessous les différentes études et projets professionnels que j'ai pu entreprendre au sein de ma carrière.
-                </p>
-                <div class="mt-6">
-                    <a href="mbakht.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 mr-4">
-                        Mon CV
-                    </a>
-                    <a href="E4.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                        Tableau de Synthèse E4
+    <!-- À propos Section -->
+    <section id="a-propos" class="py-20 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">À propos</h2>
+                <p class="section-subtitle">Qui suis-je?</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 mt-12">
+                <div class="md:w-1/3" data-aos="fade-right" data-aos-delay="200">
+                    <div class="relative">
+                        <div class="bg-primary opacity-20 blur-lg absolute -inset-1 rounded-lg"></div>
+                        <div class="bg-dark relative">
+                            <img src="avatar.jpg" alt="Bakht Mohamed" class="rounded-lg w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">Etudiant en Informatique</h3>
+                    <p class="mb-6 text-light opacity-80">
+                        Je suis <strong>Bakht Mohamed </strong>, et je suis actuellement étudiant 🎓 au <strong>lycée Charles de Foucauld en deuxième année de BTS SIO</strong> (Services Informatiques aux Organisations) en option SLAM (Solutions Logicielles et Application Métier) axé développement et cybersécurité . Je vous propose sur ce portfolio de retrouver ci-dessous les différentes études et projets professionnels que j'ai pu entreprendre au sein de ma carrière.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="about-card">
+                            <i class="fas fa-code card-icon"></i>
+                            <h4 class="font-bold text-lg mb-2">Développement Web</h4>
+                            <p class="text-light opacity-70">Création de sites et applications web responsives et performants.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-palette card-icon"></i>
+                            <h4 class="font-bold text-lg mb-2">UI/UX Design</h4>
+                            <p class="text-light opacity-70">Conception d'interfaces utilisateur intuitives et esthétiques.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-database card-icon"></i>
+                            <h4 class="font-bold text-lg mb-2">Gestion de Base de Données</h4>
+                            <p class="text-light opacity-70">Conception et optimisation de bases de données relationnelles.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-server card-icon"></i>
+                            <h4 class="font-bold text-lg mb-2">Administration Système</h4>
+                            <p class="text-light opacity-70">Configuration et gestion de serveurs web et d'hébergement.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary">
+                        Me contacter <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
-            <div class="text-center">
-                <img src="avatar.jpg" alt="Bakht Mohamed" class="mx-auto rounded-full w-64 h-64 object-cover shadow-lg">
+        </div>
+    </section>
+
+    <!-- E4 Section -->
+    <section id="e4" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">E4</h2>
+                <p class="section-subtitle">Mon épreuve E4 BTS SIO</p>
+            </div>
+
+            <div class="mt-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-dark p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Présentation de l'épreuve E4</h3>
+                    <p class="mb-6 text-light opacity-80">
+                        L'épreuve E4 du BTS SIO (Services Informatiques aux Organisations) est une épreuve 
+                        professionnelle qui consiste à présenter des situations professionnelles réalisées 
+                        en entreprise lors de mes périodes de stage.
+                    </p>
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-3">Objectifs de l'épreuve :</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-light opacity-80">
+                            <li>Présenter et analyser des situations professionnelles vécues</li>
+                            <li>Démontrer l'acquisition de compétences techniques</li>
+                            <li>Mettre en évidence ma capacité à m'intégrer dans un environnement professionnel</li>
+                            <li>Valoriser mes compétences en communication et en gestion de projet</li>
+                        </ul>
+                    </div>
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="e4-card">
+                            <div class="card-header">
+                                <i class="fas fa-building text-lg mr-2"></i>
+                                <h4 class="font-bold">Stage en entreprise</h4>
+                            </div>
+                            <p class="mt-3 text-light opacity-80">
+                                J'ai effectué mon stage chez Chiché Informatique, où j'ai pu participer à plusieurs projets.
+                            </p>
+                        </div>
+                        <div class="e4-card">
+                            <div class="card-header">
+                                <i class="fas fa-tasks text-lg mr-2"></i>
+                                <h4 class="font-bold">Projets réalisés</h4>
+                            </div>
+                            <p class="mt-3 text-light opacity-80">
+                                Durant cette période, j'ai développé un site web statique en HTML & CSS, j'ai pu faire de la maintenance de site web dynamique et plein d'autre choses que vous découvrirez !
+                            </p>
+                        </div>
+                        <div class="e4-card">
+                            <div class="card-header">
+                                <i class="fas fa-cogs text-lg mr-2"></i>
+                                <h4 class="font-bold">Compétences développées</h4>
+                            </div>
+                            <p class="mt-3 text-light opacity-80">
+                                Ces expériences m'ont permis de renforcer mes compétences techniques 
+                                en développement web et j'ai pu commencer un apprentissage en JavaScript durant cette période.
+                            </p>
+                        </div>
+                        <div class="e4-card">
+                            <div class="card-header">
+                                <i class="fas fa-file-alt text-lg mr-2"></i>
+                                <h4 class="font-bold">Documentation</h4>
+                            </div>
+                            <p class="mt-3 text-light opacity-80">
+                                Vous pouvez consulter mon tableau de synthèse cliquant sur "Télécharger".
+                            </p>
+                            <a href="#" class="inline-block mt-4 text-primary hover:text-highlight transition-colors">
+                                <a href="SYNTHESE.PDF" download class="inline-block mt-4 text-primary hover:text-highlight transition-colors">
+                                    <i class="fas fa-download mr-2"></i> Télécharger le tableau de synthèse
+        
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="py-20 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Compétences</h2>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Technical Skills -->
+                <div data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-6">Langages</h3>
+                    
+                    <!-- Langages -->
+                    <div class="mb-8">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="skill-item">
+                                <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                                <span class="font-medium">HTML</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                                <span class="font-medium">CSS</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-php text-4xl text-purple-500 mb-2"></i>
+                                <span class="font-medium">PHP</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python text-4xl text-yellow-500 mb-2"></i>
+                                <span class="font-medium">Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-java text-4xl text-red-500 mb-2"></i>
+                                <span class="font-medium">Java</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-4xl font-bold mb-2 text-blue-300">C</span>
+                                <span class="font-medium">C</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks & BDD -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Frameworks & Bases de données</h4>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="skill-item">
+                                <i class="fab fa-laravel text-4xl text-red-400 mb-2"></i>
+                                <span class="font-medium">Laravel</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
+                                <span class="font-medium">MySQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-project-diagram text-4xl text-green-400 mb-2"></i>
+                                <span class="font-medium">Merise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Skills & Tools -->
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-6">Outils de développement</h3>
+                    
+                    <!-- Tools -->
+                    <div class="mb-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="tool-card">
+                                <i class="fab fa-git-alt text-3xl mb-3 text-orange-500"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="tool-card">
+                                <i class="fab fa-github text-3xl mb-3 text-gray-200"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="tool-card">
+                                <i class="fas fa-code text-3xl mb-3 text-blue-500"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tool-card">
+                                <svg class="w-12 h-12 mb-3 mx-auto" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30 4L4 16V44L30 56L56 44V16L30 4Z" fill="#2C2255"/>
+                                    <path d="M30 4V56M4 16L30 28M30 28L56 16M30 28V56" stroke="white" stroke-width="2"/>
+                                </svg>
+                                <span>Eclipse</span>
+                            </div>
+                            <div class="tool-card">
+                                <svg class="w-12 h-12 mb-3 mx-auto" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="10" fill="#087CFA" fill-opacity="0.3"/>
+                                    <path d="M12 12H48V48H12V12Z" fill="#087CFA" fill-opacity="0.7"/>
+                                    <path d="M16 16H28V28H16V16Z" fill="white"/>
+                                    <path d="M32 16L44 28H32V16Z" fill="white"/>
+                                    <path d="M16 32H28L16 44V32Z" fill="white"/>
+                                    <path d="M32 32H44V44H32V32Z" fill="white"/>
+                                </svg>
+                                <span>IntelliJ</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Projets</h2>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="TP Seven" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project1">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Machine Virtuelle Windows Seven</h3>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="Calculatrice Laravel" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project2">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Calculatrice Laravel</h3>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="PPE Parking" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project3">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TP Parking Laravel</h3>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="PPE Personnel" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project4">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TP Personnel</h3>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="TP Devis" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project5">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">TP Devis</h3>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="API REST" class="w-full h-full object-cover">
+                        <div class="project-overlay">
+                            <button class="view-project-btn" data-modal="project6">
+                                <i class="fas fa-eye mr-2"></i> Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">API REST</h3>
+                        <p class="project-category">Développement Backend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veille Section -->
+    <section id="veille" class="py-20 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Veille Technologique</h2>
+                <p class="section-subtitle">Rester à jour avec les nouvelles technologies</p>
+            </div>
+
+            <div class="mt-12">
+                <div class="bg-darker p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Partie Gauche - Sujet de veille -->
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-400">Le Cloud Gaming</h3>
+                            <p class="mb-4 text-light opacity-80">
+                                Le <strong>Cloud Gaming</strong>, ou jeu en streaming, permet aux utilisateurs de jouer à des jeux vidéo sans 
+                                avoir besoin d'une console ou d'un ordinateur puissant. Les jeux sont exécutés sur des 
+                                serveurs distants et les images sont transmises en temps réel sur l'écran de l'utilisateur via 
+                                une connexion internet. Cela élimine le besoin d'acheter du matériel coûteux, puisque le 
+                                traitement graphique et les calculs lourds sont déportés sur des serveurs dans le cloud.
+                            </p>
+                            
+                            <h4 class="text-lg font-semibold mb-3">Technologies utilisées :</h4>
+                            <ul class="list-disc pl-6 space-y-2 text-light opacity-80 mb-4">
+                                <li><strong>Infrastructure Cloud :</strong> Des plateformes comme 
+                                    <a href="#" class="text-blue-400 hover:text-blue-300">Google Cloud</a>, 
+                                    <a href="#" class="text-blue-400 hover:text-blue-300">Microsoft Azure</a>, ou 
+                                    <a href="#" class="text-blue-400 hover:text-blue-300">Amazon Web Services (AWS)</a> 
+                                    hébergent les serveurs nécessaires au fonctionnement des services de Cloud Gaming.
+                                </li>
+                                <li><strong>Streaming vidéo :</strong> Les jeux sont rendus sur un serveur distant et transmis sous forme de 
+                                    flux vidéo en temps réel à l'utilisateur via des protocoles comme WebRTC.
+                                </li>
+                                <li><strong>Réseau et latence :</strong> Une connexion internet rapide et stable est cruciale pour une 
+                                    expérience fluide. Les réseaux 5G et la fibre optique jouent un rôle essentiel dans le 
+                                    développement du Cloud Gaming.
+                                </li>
+                                <li><strong>Interfaces utilisateurs :</strong> Les plateformes proposent des applications permettant de jouer 
+                                    sur smartphones, tablettes, télévisions connectées et navigateurs web.
+                                </li>
+                            </ul>
+                            
+                            <div class="bg-dark p-4 rounded-lg mb-4">
+                                <h4 class="text-lg font-semibold mb-2">Vidéo sur le Cloud Gaming :</h4>
+                                <div class="aspect-w-16 aspect-h-9 relative">
+                                    <div class="flex justify-start">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WB4TBw_KI6E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <button class="bg-red-600 hover:bg-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center">
+                                            <i class="fas fa-play text-xl"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Partie Droite - Outils et ressources -->
+                        <div class="lg:w-1/2">
+                            <div class="bg-dark p-6 rounded-lg mb-6">
+                                <div class="flex items-center mb-4">
+                                    <img src="feedly.webp" alt="Feedly Icon" class="w-20 h-12 mr-4 rounded">
+                                    <h4 class="text-xl font-bold">Feedly</h4>
+                                </div>
+                                <p class="text-light opacity-80 mb-4">
+                                    Mon outil principal pour organiser et suivre mes sources d'information 
+                                    techniques. Feedly est un agrégateur de flux RSS accessible via 
+                                    navigateur et mobile pour gérer ses abonnements.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-dark p-6 rounded-lg mb-6">
+                                <h4 class="text-xl font-bold mb-4">Services de Cloud Gaming</h4>
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <img src="Cgaming1.jpg" alt="Cloud Gaming Services" class="rounded-lg w-full">
+                                    <img src="cgaming2.jpg" alt="Cloud Gaming Services" class="rounded-lg w-full">
+                                    <img src="cgaming3.webp" alt="Cloud Gaming Services" class="rounded-lg w-full">
+                                    <img src="/api/placeholder/200/100" alt="Cloud Gaming Services" class="rounded-lg w-full">
+                                </div>
+                            </div>
+                            
+                            <div class="bg-dark p-6 rounded-lg">
+                                <h4 class="text-xl font-bold mb-4">Articles utiles :</h4>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                            <i class="fas fa-external-link-alt mr-2"></i>
+                                            Shadow - Service de PC dans le Cloud
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                            <i class="fas fa-external-link-alt mr-2"></i>
+                                            GeForce NOW - NVIDIA Cloud Gaming
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                            <i class="fas fa-external-link-alt mr-2"></i>
+                                            Xbox Cloud Gaming
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                            <i class="fas fa-external-link-alt mr-2"></i>
+                                            Amazon Luna - Cloud Gaming
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Articles récents -->
+                    <div class="mt-10">
+                        <h4 class="text-xl font-semibold mb-4">Articles récents</h4>
+                        <div class="space-y-6">
+                            <div class="article-card">
+                                <div class="article-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Fév</span>
+                                </div>
+                                <div class="article-content">
+                                    <h5 class="font-semibold text-lg">Les tendances du développement web en 2025</h5>
+                                    <p class="text-light opacity-70 mt-2">
+                                        Analyse des technologies et pratiques qui façonnent le développement web cette année.
+                                    </p>
+                                    <a href="#" class="inline-block mt-3 text-primary hover:text-highlight transition-colors">
+                                        Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="article-card">
+                                <div class="article-date">
+                                    <span class="day">03</span>
+                                    <span class="month">Jan</span>
+                                </div>
+                                <div class="article-content">
+                                    <h5 class="font-semibold text-lg">Optimisation des performances d'applications React</h5>
+                                    <p class="text-light opacity-70 mt-2">
+                                        Techniques et bonnes pratiques pour améliorer les performances de vos applications React.
+                                    </p>
+                                    <a href="#" class="inline-block mt-3 text-primary hover:text-highlight transition-colors">
+                                        Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="article-card">
+                                <div class="article-date">
+                                    <span class="day">20</span>
+                                    <span class="month">Déc</span>
+                                </div>
+                                <div class="article-content">
+                                    <h5 class="font-semibold text-lg">Introduction à Tailwind CSS</h5>
+                                    <p class="text-light opacity-70 mt-2">
+                                        Découverte du framework CSS utilitaire et comment l'intégrer dans vos projets.
+                                    </p>
+                                    <a href="#" class="inline-block mt-3 text-primary hover:text-highlight transition-colors">
+                                        Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Travaillons ensemble</p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-6">Discutons de votre projet</h3>
+                    <p class="mb-8 text-light opacity-80">
+                        Vous avez un projet en tête ou une opportunité de collaboration ? N'hésitez pas à me contacter 
+                        en utilisant le formulaire ou directement via les coordonnées ci-dessous.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="font-semibold">Email</h4>
+                                <p>contact@bakhtmohamed.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="font-semibold">Téléphone</h4>
+                                <p>+33 6 XX XX XX XX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="font-semibold">Localisation</h4>
+                                <p>Paris, France</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Retrouvez-moi sur</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <form id="contact-form" class="bg-dark p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Nom</label>
+                            <input type="text" id="name" class="form-input" placeholder="Votre nom" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Votre email" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 font-medium">Sujet</label>
+                            <input type="text" id="subject" class="form-input" placeholder="Sujet de votre message" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5" class="form-input" placeholder="Votre message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">
+                            Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#accueil" class="text-2xl font-bold gradient-text">BM.</a>
+                    <p class="mt-2 text-light opacity-70">Développeur Web Full Stack</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <div class="grid grid-cols-2 gap-x-10 gap-y-2">
+                        <a href="#accueil" class="text-light opacity-70 hover:text-primary transition-colors">Accueil</a>
+                        <a href="#a-propos" class="text-light opacity-70 hover:text-primary transition-colors">À propos</a>
+                        <a href="#e4" class="text-light opacity-70 hover:text-primary transition-colors">E4</a>
+                        <a href="#competences" class="text-light opacity-70 hover:text-primary transition-colors">Compétences</a>
+                        <a href="#projets" class="text-light opacity-70 hover:text-primary transition-colors">Projets</a>
+                        <a href="#veille" class="text-light opacity-70 hover:text-primary transition-colors">Veille</a>
+                        <a href="#contact" class="text-light opacity-70 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-moi</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 pt-6 border-t border-gray-800 text-center">
+                <p class="text-light opacity-70">
+                    © 2025 Bakht Mohamed. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals for Projects -->
+    <!-- Project 1 Modal -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">Site E-commerce</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="Projet E-commerce" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Développement d'une plateforme e-commerce complète pour un commerçant local. 
+                            Le site permet aux clients de parcourir les produits, de les ajouter au panier 
+                            et de finaliser leurs achats avec paiement en ligne sécurisé.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Catalogue de produits avec filtres et recherche</li>
+                            <li>Système de panier d'achat</li>
+                            <li>Processus de paiement sécurisé via Stripe</li>
+                            <li>Gestion des utilisateurs et des commandes</li>
+                            <li>Tableau de bord administrateur</li>
+                            <li>Design responsive pour toutes les tailles d'écran</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visiter le site
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-    <!-- Section Compétences -->
-    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-indigo-600 dark:text-indigo-400">
-                Compétences
-            </h2>
-            <div id="skills-container" class="grid md:grid-cols-4 gap-6">
-                <!-- Compétences seront ajoutées dynamiquement -->
+    <!-- Project 2 Modal -->
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">Application de Réservation</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="Application de Réservation" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Application web permettant aux utilisateurs de réserver des services 
+                            ou des rendez-vous en ligne. Cette solution inclut un calendrier interactif,
+                            un système de gestion des disponibilités et des notifications.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">FullCalendar</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Calendrier interactif pour la sélection des disponibilités</li>
+                            <li>Système d'authentification et de gestion des profils</li>
+                            <li>Confirmation de réservation par email</li>
+                            <li>Rappels automatiques avant les rendez-vous</li>
+                            <li>Tableau de bord pour les prestataires de services</li>
+                            <li>Statistiques et rapports sur les réservations</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visiter l'application
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-      <!-- Section Projets -->
-      <section id="projects" class="py-20 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-indigo-600 dark:text-indigo-400">Mes Projets</h2>
-            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projets seront ajoutés dynamiquement -->
+    <!-- Project 3 Modal -->
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">Dashboard Administrateur</h3>
+                <button class="close-modal">&times;</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Modal -->
-    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg max-w-4xl w-full">
-            <button id="close-modal" class="absolute top-2 right-2 text-gray-600 dark:text-gray-400 text-2xl">&times;</button>
-            <div id="modal-content"></div>
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="Dashboard Administrateur" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Développement d'un tableau de bord administrateur complet avec des fonctionnalités 
+                            avancées de gestion de données, d'analyse et de reporting. Cette interface offre une 
+                            vision globale des opérations et facilite la prise de décision.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">API REST</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Tableau de bord avec KPIs et indicateurs en temps réel</li>
+                            <li>Gestion complète des utilisateurs et des rôles</li>
+                            <li>Visualisation de données avec graphiques interactifs</li>
+                            <li>Export de rapports au format PDF et Excel</li>
+                            <li>Système de notification et d'alertes</li>
+                            <li>Journal d'activité et audit des actions</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Voir la démo
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
-<!-- Section Veille Technologique -->
-<section id="veille" class="py-20 bg-gray-100 dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-        <!-- Titre de la section avec la bonne couleur -->
-        <h2 class="text-4xl font-bold text-center mb-12 text-blue-600 dark:text-indigo-400">
-            Veille Technologique
-        </h2>
-        <!-- Conteneur principal -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 grid md:grid-cols-2 gap-6">
-            <!-- Première colonne : Texte -->
-            <div>
-                <h3 class="text-3xl font-bold text-center mb-6 text-blue-600 dark:text-indigo-400">
-                    Le Cloud Gaming
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    Le <strong>Cloud Gaming</strong>, ou jeu en streaming, permet aux utilisateurs de jouer à des jeux vidéo sans avoir besoin d'une console ou d'un ordinateur puissant. Les jeux sont exécutés sur des serveurs distants et les images sont transmises en temps réel sur l'écran de l'utilisateur via une connexion internet. Cela élimine le besoin d’acheter du matériel coûteux, puisque le traitement graphique et les calculs lourds sont déportés sur des serveurs dans le cloud.
-                </p>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    <strong>Technologies utilisées :</strong>
-                </p>
-                <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 leading-relaxed">
-                    <li><strong>Infrastructure Cloud :</strong> Des plateformes comme <a href="https://cloud.google.com" class="text-blue-500 hover:underline" target="_blank">Google Cloud</a>, <a href="https://azure.microsoft.com" class="text-blue-500 hover:underline" target="_blank">Microsoft Azure</a>, ou <a href="https://aws.amazon.com" class="text-blue-500 hover:underline" target="_blank">Amazon Web Services (AWS)</a> hébergent les serveurs nécessaires au fonctionnement des services de Cloud Gaming. Ces serveurs gèrent un grand nombre de joueurs en simultané avec une faible latence.</li>
-                    <li><strong>Streaming vidéo :</strong> Les jeux sont rendus sur un serveur distant et transmis sous forme de flux vidéo en temps réel à l'utilisateur via des protocoles comme <a href="https://webrtc.org/" class="text-blue-500 hover:underline" target="_blank">WebRTC</a> ou des formats spécifiques.</li>
-                    <li><strong>Réseau et latence :</strong> Une connexion internet rapide et stable est cruciale pour une expérience fluide. Les réseaux <a href="https://www.qualcomm.com/5g" class="text-blue-500 hover:underline" target="_blank">5G</a> et la <a href="https://www.orange.fr/portail-fibre" class="text-blue-500 hover:underline" target="_blank">fibre optique</a> jouent un rôle essentiel dans le développement du Cloud Gaming.</li>
-                    <li><strong>Interfaces utilisateurs :</strong> Les plateformes proposent des applications permettant de jouer sur <em>smartphones</em>, <em>tablettes</em>, <em>télévisions connectées</em> et <em>navigateurs web</em>.</li>
-                </ul>
-                <!-- Vidéo YouTube alignée sous le texte -->
-                <div class="mt-6">
-                    <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Vidéo sur le Cloud Gaming :</h4>
-                    <div class="flex justify-start">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WB4TBw_KI6E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+    <!-- Project 4 Modal -->
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">Application de Chat</h3>
+                <button class="close-modal">&times;</button>
             </div>
-            <!-- Deuxième colonne : Image et outil -->
-            <div class="space-y-6">
-                <!-- Feedly Card -->
-                <div class="flex items-center bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <img src="feedly.webp" alt="Feedly" class="w-20 h-20 mr-6 object-contain">
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="Application de Chat" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
                     <div>
-                        <h4 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                            Feedly
-                        </h4>
-                        <p class="text-gray-700 dark:text-gray-400 text-base">
-                            Mon outil principal pour organiser et suivre mes sources d'information techniques. <a href="https://feedly.com" class="text-blue-500 hover:underline" target="_blank">Feedly</a> est un agrégateur de flux RSS accessible via navigateur et mobile pour gérer ses abonnements.
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Conception et développement d'une application de messagerie en temps réel permettant 
+                            aux utilisateurs de communiquer individuellement ou en groupe. L'application inclut 
+                            des fonctionnalités avancées comme le partage de fichiers et l'historique des conversations.
                         </p>
                     </div>
-                </div>
-                <!-- Cloud Gaming Images -->
-                <div>
-                    <img src="Cgaming1.jpg" alt="Schéma Cloud Gaming" class="rounded-lg shadow-md mb-4">
-                    <img src="cgaming2.jpg" alt="Logos des plateformes Cloud Gaming" class="rounded-lg shadow-md">
-                </div>
-                <!-- Liens utiles -->
-                <div class="mt-6">
-                    <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Articles utiles :</h4>
-                    <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300">
-                        <li><a href="https://www.realite-virtuelle.com/shadow-pc-tout-savoir/" class="text-blue-500 hover:underline" target="_blank">Shadow - Service de PC dans le Cloud</a></li>
-                        <li><a href="https://www.geforcenow.com" class="text-blue-500 hover:underline" target="_blank">GeForce NOW - NVIDIA Cloud Gaming</a></li>
-                        <li><a href="https://www.xbox.com/en-US/cloud-gaming" class="text-blue-500 hover:underline" target="_blank">Xbox Cloud Gaming</a></li>
-                        <li><a href="https://luna.amazon.com/" class="text-blue-500 hover:underline" target="_blank">Amazon Luna - Cloud Gaming</a></li>
-                    </ul>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Messagerie instantanée en temps réel</li>
+                            <li>Discussions individuelles et groupes de conversation</li>
+                            <li>Partage de fichiers (images, documents, vidéos)</li>
+                            <li>Notifications en temps réel</li>
+                            <li>Historique des conversations et recherche</li>
+                            <li>Application responsive compatible mobile et desktop</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Essayer l'application
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-
-
-
-    <!-- Section Contact -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-indigo-600 dark:text-indigo-400">
-                Contactez-moi
-            </h2>
-            <div class="max-w-lg mx-auto">
-                <form class="space-y-6">
-                    <input type="text" placeholder="Nom" class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100">
-                    <input type="email" placeholder="Email" class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100">
-                    <textarea placeholder="Votre message" class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100" rows="5"></textarea>
-                    <button type="submit" class="btn-primary w-full">Envoyer</button>
-                </form>
+    
+    <!-- Project 5 Modal -->
+    <div id="project5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">Site Vitrine d'Entreprise</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="Site Vitrine" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Création d'un site vitrine moderne et élégant pour une entreprise dans le secteur 
+                            des services. Le design a été spécialement conçu pour refléter l'identité de la marque 
+                            tout en optimisant l'expérience utilisateur et les conversions.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3/SASS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">SEO</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Design personnalisé et responsive</li>
+                            <li>Animations et transitions fluides</li>
+                            <li>Formulaire de contact avec validation</li>
+                            <li>Intégration de Google Maps</li>
+                            <li>Optimisation SEO pour un meilleur référencement</li>
+                            <li>Tableau de bord WordPress personnalisé pour le client</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visiter le site
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Modaux -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg max-w-4xl w-full h-5/6 overflow-y-auto">
-            <button id="close-modal" class="absolute top-4 right-4 text-2xl">&times;</button>
-            <div id="modal-content" class="h-full"></div>
+    </div>
+    
+    <!-- Project 6 Modal -->
+    <div id="project6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-2xl font-bold">API REST</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="/api/placeholder/1200/600" alt="API REST" class="w-full h-auto rounded-lg mb-6">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Description</h4>
+                        <p class="text-light opacity-80">
+                            Conception et développement d'une API REST robuste pour permettre la communication 
+                            entre différentes applications et services. Cette API facilite l'accès aux données 
+                            et fonctionnalités centralisées tout en garantissant la sécurité et les performances.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Swagger</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="list-disc pl-6 text-light opacity-80 space-y-1">
+                            <li>Architecture RESTful avec endpoints bien définis</li>
+                            <li>Authentification sécurisée avec JWT</li>
+                            <li>Documentation complète avec Swagger</li>
+                            <li>Validation des données entrantes</li>
+                            <li>Gestion des erreurs et logging avancé</li>
+                            <li>Tests automatisés pour garantir la fiabilité</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Lien du projet</h4>
+                        <a href="#" class="text-primary hover:text-highlight transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Documentation de l'API
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer class="bg-gray-900 text-white py-6 text-center">
-        <p>&copy; 2025 Bakht Mohamed</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

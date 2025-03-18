@@ -1,434 +1,226 @@
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 800, once: true });
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
 
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modal-content');
-    const closeModal = document.getElementById('close-modal');
-
-    // Thème sombre
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        
-        if (document.body.classList.contains('dark')) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('py-2');
+            navbar.classList.remove('py-4');
+            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
         } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
+            navbar.classList.add('py-4');
+            navbar.classList.remove('py-2');
+            navbar.style.boxShadow = 'none';
         }
     });
 
-    // Animation de typing
-    const typedTextElement = document.getElementById('typed-text');
-    const text = "en BTS SIO option SLAM";
-    let index = 0;
-
-    function typeText() {
-        if (index < text.length) {
-            typedTextElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeText, 50);
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            menuToggle.innerHTML = '<i class="fas fa-times text-xl"></i>';
+        } else {
+            mobileMenu.classList.add('hidden');
+            menuToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
         }
+    });
+
+    // Mobile Menu Links - Close the menu when a link is clicked
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            menuToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+        });
+    });
+
+    // Project Modals
+    const modalButtons = document.querySelectorAll('.view-project-btn');
+    const modalCloseButtons = document.querySelectorAll('.close-modal');
+    const modals = document.querySelectorAll('.modal');
+    
+    // Open modal
+    modalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            
+            // Animate the modal
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                modal.querySelector('.modal-content').style.animation = 'slideUp 0.4s forwards';
+            }, 10);
+        });
+    });
+    
+    // Close modal when clicking the close button
+    modalCloseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            closeModal(modal);
+        });
+    });
+    
+    // Close modal when clicking outside the content
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal(this);
+            }
+        });
+    });
+    
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (modal.style.display === 'block') {
+                    closeModal(modal);
+                }
+            });
+        }
+    });
+    
+    // Function to close modal with animation
+    function closeModal(modal) {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling again
+        }, 300);
     }
-    typeText();
 
-    // Compétences
-    const skillsContainer = document.getElementById('skills-container');
-    const skills = [
-        { name: 'HTML', icon: 'fab fa-html5', color: 'text-orange-500' },
-        { name: 'CSS', icon: 'fab fa-css3-alt', color: 'text-blue-500' },
-        { name: 'JavaScript', icon: 'fab fa-js', color: 'text-yellow-500' },
-        { name: 'PHP', icon: 'fab fa-php', color: 'text-purple-500' },
-        { name: 'Python', icon: 'fab fa-python', color: 'text-green-500' },
-        { name: 'Java', icon: 'fab fa-java', color: 'text-red-500' },
-        { name: 'Laravel', icon: 'fab fa-laravel', color: 'text-red-700' },
-        { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-700' },
-    ];
+    // Form Submission
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form inputs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate form inputs (basic validation)
+            if (!name || !email || !subject || !message) {
+                alert('Veuillez remplir tous les champs du formulaire.');
+                return;
+            }
+            
+            // Here you would normally send the form data to a server
+            // For demo purposes, we'll just log it to the console
+            console.log('Form Submission:', { name, email, subject, message });
+            
+            // Reset the form
+            contactForm.reset();
+            
+            // Show success message
+            alert('Votre message a été envoyé avec succès ! Je vous répondrai dès que possible.');
+        });
+    }
 
-    skills.forEach(skill => {
-        const skillCard = document.createElement('div');
-        skillCard.classList.add('skill-card', 'p-6', 'rounded-lg', 'text-center');
-        skillCard.innerHTML = `
-            <i class="${skill.icon} ${skill.color} text-6xl mb-4"></i>
-            <h3 class="text-xl font-bold">${skill.name}</h3>
-        `;
-        skillsContainer.appendChild(skillCard);
-    });
-
-    // Projets
-    const projectsContainer = document.getElementById('projects-container');
-    const projects = [
-        {
-            title: 'Puissance 4',
-            description: 'Jeu de Puissance 4',
-            technologies: ['Langage C'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Puissance 4 en C</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Implémentation complète du jeu Puissance 4 avec une logique de jeu et des algorithmes de détection de victoire.
-                            Ce projet a été fait en groupe lors de ma première année de Licence en Informatique.</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Jeu contre un autre joueur</li>
-                                <li>Vérification automatique des conditions de victoire</li>
-                                <li>Interface console interactive</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">C</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Algorithmes</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Programmation Logique</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://github.com/Kadeyofficiel/Puissance4" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Voir le code source
-                        </a>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Personnel',
-            description: 'Application en Java pour gérer les employés des ligues',
-            technologies: ['Java'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Application Personnel en Java</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Application pour gérer les employés des ligues avec des fonctionnalités avancées de gestion et de suivi.</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Gestion des informations des employés</li>
-                                <li>Suivi des performances</li>
-                                <li>Interface utilisateur conviviale</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Java</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="documentation.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Télécharger la Documentation
-                        </a>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://github.com/Kadeyofficiel/personnel" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Voir le code source
-                        </a>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Stage de première année',
-            description: "Maintenance & corrections de bugs d'un site web dynamique",
-            technologies: ['HTML', 'CSS',],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB dynamique</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Stage de première année de BTS SIO</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
-                            <ul class="list-disc pl-5">
-                            <li>Les images proviennent de screen fait via un smartphone -> adaptation automatique en fonction de l'écran</li>
-                                <li>Création d'une machine virtuelle avec une installation d'un OS Windows à l'aide d'un fichier en .iso</li>
-                                <li>Modifications de pages web, en actualisant des informations</li>
-                                <li>Amélioration de l'interface utilisateur</li>
-                                <li>Adaptation automatique des images, vidéos et autres
-contenus multimédias en fonction de la taille de l'écran</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                            </div>
-    <img src="11.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
-        <img src="12.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
-            <img src="13.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
-                        <img src="14.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
-                        </div>
-                        </div>
-                            <a href="STAGE1.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Télécharger la Documentation
-                        </a>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Stage de deuxième année',
-            description: "Maintenance & développement d'un site web statique",
-            technologies: ['HTML', 'CSS', 'PHP'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Site WEB</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Stage de deuxième année de BTS SIO</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Tâches réalisés</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Modification de la page "produits", en actualisant les prix, ajout d'images</li>
-                                <li>Création de la possibilité de dérouler "produits" affichant les différents types de produit disponible : Matériels, accessoires, services</li>
-                                <li>Création des pages suivantes : Matériels, accessoires, services</li>
-                                <li>Création d'un formulaire de contact en HTML & CSS + PHP pour l'envoie des informations au destinataire</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">HTML</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">CSS</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                            </div>
-                            <div class="mt-6">
-    <img src="2eme1.png" alt="Calculatrice Interface 1" class="w-3/4 h-auto mb-4 rounded shadow-lg mr-auto">
-    <img src="2eme2.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
-        <img src="2EME3.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
-            <img src="2EME4.png" alt="Calculatrice Interface 2" class="w-3/4 h-auto rounded shadow-lg mr-auto">
-</div>
-                            <a href="STAGE2.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Télécharger la Documentation
-                        </div>
-
-                        </a>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Sucrerie',
-            description: "Base de donnée pour gérer le stock d'une boutique de bonbons & de patisseries",
-            technologies: ['SQL'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Base de donnée SQL</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Base de donnée pour gérer le stock d'une boutique de bonbons & de patisseries</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Logiciels utilisés :</h4>
-                            <ul class="list-disc pl-5">
-                                <li>MySQL pour créer la BDD</li>
-                                <li>Code SQL fait sur Visual Studio Code</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">SQL & MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <a href="Sucrerie.pdf" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Télécharger la Documentation
-                        </a>
-                    </div>
-                    <div class="mt-6">
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Calculatrice',
-            description: 'Calculatrice en PHP',
-            technologies: ['PHP', 'Laravel'],
-            details: `
-                <div class="project-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Calculatrice en PHP</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Description</h4>
-                            <p class="mb-4">Application web permettant d'effectuer des calculs simples avec une interface assez</p>
-                            
-                            <h4 class="text-xl font-semibold mb-4">Fonctionnalités</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Calculs simples et complexes</li>
-                                <li>Gestion des erreurs</li>      
-                                <li>Interface responsive</li>
-                    
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
-                            </div>
-                        </div>
-                    </div>
-<div class="mt-6">
-    <img src="calc1.png" alt="Calculatrice Interface 1" class="w-1/4 h-auto mb-4 rounded shadow-lg mr-auto">
-    <img src="calc2.png" alt="Calculatrice Interface 2" class="w-1/4 h-auto rounded shadow-lg mr-auto">
-</div>
-
-
-
-                    <div class="mt-6">
-                        <a href="https://github.com/Kadeyofficiel/Calculatrice" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">
-                            Voir le code source
-                        </a>
-                    </div>
-                </div>
-            `
-        },
+    // Typing Animation Effect for the Hero Section
+    const typingElement = document.querySelector('.code-font');
+    
+    if (typingElement) {
+        // This is a simple way to create a typing effect
+        // For a more sophisticated typing effect, you might want to use a library like Typed.js
         
-    ];
-
-    projects.forEach((project, index) => {
-        const projectCard = document.createElement('div');
-        projectCard.classList.add('bg-white', 'dark:bg-gray-800', 'p-6', 'rounded-lg', 'shadow-md');
-        projectCard.innerHTML = `
-            <h3 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">${project.title}</h3>
-            <p class="mb-4 text-gray-700 dark:text-gray-300">${project.description}</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                ${project.technologies.map(tech => 
-                    `<span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">${tech}</span>`
-                ).join('')}
-            </div>
-            <button class="project-details-btn btn-primary" data-index="${index}">
-                Voir Détails
-            </button>
-        `;
-        projectsContainer.appendChild(projectCard);
-    });
-
-    // Veille Technologique
-    const veilleContainer = document.getElementById('veille-container');
-    const veilleThemes = [
-        {
-            title: 'Intelligence Artificielle',
-            description: 'Suivi des dernières avancées en IA et machine learning',
-            details: `
-                <div class="veille-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Intelligence Artificielle</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Domaines de Recherche</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Machine Learning</li>
-                                <li>Deep Learning</li>
-                                <li>NLP</li>
-                                <li>Computer Vision</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Dernières Avancées</h4>
-                            <p>Suivi des publications récentes, nouveaux modèles et innovations technologiques dans le domaine de l'IA.</p>
-                        </div>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Développement Web',
-            description: 'Tendances et technologies émergentes',
-            details: `
-                <div class="veille-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Développement Web</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Technologies Émergentes</h4>
-                            <ul class="list-disc pl-5">
-                                <li>React & Next.js</li>
-                                <li>WebAssembly</li>
-                                <li>JAMstack</li>
-                                <li>Serverless</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Frameworks Modernes</h4>
-                            <p>Analyse des dernières versions, performances et cas d'usage des frameworks web contemporains.</p>
-                        </div>
-                    </div>
-                </div>
-            `
-        },
-        {
-            title: 'Cybersécurité',
-            description: 'Monitoring des menaces et solutions',
-            details: `
-                <div class="veille-details">
-                    <h3 class="text-3xl font-bold mb-6 text-indigo-600">Cybersécurité</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Axes de Veille</h4>
-                            <ul class="list-disc pl-5">
-                                <li>Cryptographie</li>
-                                <li>Sécurité des réseaux</li>
-                                <li>Protection des données</li>
-                                <li>Ethical Hacking</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-4">Analyse des Risques</h4>
-                            <p>Étude des nouvelles vulnérabilités, techniques de protection et recommandations de sécurité.</p>
-                        </div>
-                    </div>
-                </div>
-            `
+        // We'll keep it simple for demonstration
+        function simulateTyping() {
+            typingElement.style.borderRight = '2px solid var(--highlight)';
+            typingElement.style.animation = 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite';
         }
-    ];
+        
+        // Call the function when the page loads
+        simulateTyping();
+    }
 
-    // Supprimer les projets existants avant d'ajouter
-    projectsContainer.innerHTML = ''; 
-    projects.forEach((project, index) => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md';
-        projectCard.innerHTML = `
-            <h3 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">${project.title}</h3>
-            <p class="mb-4">${project.description}</p>
-            <button class="btn-primary" data-index="${index}">Voir Détails</button>
-        `;
-        projectsContainer.appendChild(projectCard);
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70, // Adjust for navbar height
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 
-    projectsContainer.addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
-            const index = e.target.dataset.index;
-            modalContent.innerHTML = projects[index].details;
-            modal.classList.replace('hidden', 'flex'); // Affiche le modal
-        }
-    });
+    // Add active class to nav links based on scroll position
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    closeModal.addEventListener('click', () => {
-        modal.classList.replace('flex', 'hidden'); // Cache le modal
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('text-primary');
+            }
+        });
     });
+
+    // Preload images to avoid flickering during transitions
+    function preloadImages() {
+        const projectImages = document.querySelectorAll('.project-image img');
+        const imageSources = [];
+        
+        projectImages.forEach(img => {
+            imageSources.push(img.src);
+        });
+        
+        imageSources.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }
     
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.replace('flex', 'hidden');
-    });
+    // Call the preload function
+    preloadImages();
+});
+
+// Add an animation to show the page is fully loaded
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+    
+    // Hide the preloader if you have one
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+    }
 });
