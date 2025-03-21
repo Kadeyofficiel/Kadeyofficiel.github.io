@@ -52,20 +52,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalCloseButtons = document.querySelectorAll('.close-modal');
     const modals = document.querySelectorAll('.modal');
     
+    // Initialisation - s'assurer que toutes les modales sont cachées
+    function initModals() {
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+            modal.style.opacity = '0';
+            modal.classList.remove('active');
+        });
+    }
+    
+    // Exécuter l'initialisation
+    initModals();
+    
     // Open modal
     modalButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
             const modalId = this.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
             
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-            
-            // Animate the modal
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                modal.querySelector('.modal-content').style.animation = 'slideUp 0.4s forwards';
-            }, 10);
+            if (modal) {
+                // Fermer toutes les autres modales d'abord
+                modals.forEach(m => {
+                    if (m.id !== modalId && m.style.display === 'block') {
+                        closeModal(m);
+                    }
+                });
+                
+                // Ouvrir la modale demandée
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                
+                // Animate the modal
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                    modal.classList.add('active');
+                }, 10);
+            } else {
+                console.error("Modal not found with ID:", modalId);
+            }
         });
     });
     
@@ -73,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
     modalCloseButtons.forEach(button => {
         button.addEventListener('click', function() {
             const modal = this.closest('.modal');
-            closeModal(modal);
+            if (modal) {
+                closeModal(modal);
+            }
         });
     });
     
@@ -99,7 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to close modal with animation
     function closeModal(modal) {
+        if (!modal) return;
+        
         modal.style.opacity = '0';
+        modal.classList.remove('active');
+        
         setTimeout(() => {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto'; // Enable scrolling again
