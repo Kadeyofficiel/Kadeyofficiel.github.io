@@ -588,3 +588,113 @@ h1, h2, h3, h4, h5, h6 {
 .devicon-intellij-plain.colored {
     color: #087CFA;
 }
+
+/* Tooltip pour les compétences */
+.skill-item, .tool-card {
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.skill-item:hover,
+.tool-card:hover {
+    transform: translateY(-5px);
+    z-index: 50;
+}
+
+.skill-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 280px;
+    background-color: var(--dark);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 40;
+    pointer-events: none;
+}
+
+.skill-tooltip p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--light);
+    margin: 0;
+}
+
+.skill-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: var(--dark);
+    border-left: 1px solid var(--primary);
+    border-top: 1px solid var(--primary);
+}
+
+.skill-item:hover .skill-tooltip,
+.tool-card:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(20px);
+    z-index: 100;
+}
+
+/* Ajustements pour la colonne de gauche */
+.skill-item:nth-child(3n+1) .skill-tooltip,
+.tool-card:nth-child(odd) .skill-tooltip {
+    left: 0;
+    transform: translateX(0) translateY(10px);
+}
+
+.skill-item:nth-child(3n+1):hover .skill-tooltip,
+.tool-card:nth-child(odd):hover .skill-tooltip {
+    transform: translateX(0) translateY(20px);
+}
+
+/* Ajustements pour la colonne de droite */
+.skill-item:nth-child(3n) .skill-tooltip,
+.tool-card:nth-child(even) .skill-tooltip {
+    left: auto;
+    right: 0;
+    transform: translateX(0) translateY(10px);
+}
+
+.skill-item:nth-child(3n):hover .skill-tooltip,
+.tool-card:nth-child(even):hover .skill-tooltip {
+    transform: translateX(0) translateY(20px);
+}
+
+/* Ajustements pour la responsivité des tooltips */
+@media (max-width: 768px) {
+    .skill-tooltip {
+        width: 220px;
+    }
+    
+    /* Sur mobile, tous les tooltips sont centrés et fixés à l'écran */
+    .skill-item:hover .skill-tooltip,
+    .tool-card:hover .skill-tooltip {
+        position: fixed;
+        top: 50%;
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 1000;
+    }
+}
+
+@media (max-width: 640px) {
+    .skill-tooltip {
+        width: 200px;
+        font-size: 0.75rem;
+    }
+}
